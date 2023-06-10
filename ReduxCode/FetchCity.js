@@ -1,4 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { toast } from "react-hot-toast";
 
 
 const initialState = {
@@ -32,7 +33,8 @@ export const FetchCity =createAsyncThunk('myCity/FetchCity', async() => {
             method:'GET',
         });
         const data = await res.json();
-        if(!data) return console.log(data.message);
+       
+        if(!data) return [];
         return data?.data ;
     }catch(err) {
         console.log(err.message);

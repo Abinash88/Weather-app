@@ -18,7 +18,7 @@ export default function RootLayout({ children }) {
       <Provider store={Store}>
           <html lang="en">
             <body className={`${inter.className} `}>
-              <div className="flex ">
+              <div className="flex">
                 {/* <Dashboard /> */}
                 {children}
               </div>

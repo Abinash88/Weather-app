@@ -1,4 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { toast } from "react-hot-toast";
 
 const initialState = {
     data:[],
@@ -31,9 +32,9 @@ export const FetchingApi = createAsyncThunk('weather/FetchingApi', async(city) =
             method:'GET',
         });
         const data =await res.json();
-        if(!data) return console.log('internal server error');
+        if(!data.weather) return toast.error(data.message)
         return data
     }catch(err) {
-        console.log(err.message);
+        return [];
     }
 })

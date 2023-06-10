@@ -21,6 +21,25 @@ input:focus{
     background-size: cover;
 }
 
+.mainbody{
+  background:linear-gradient(#00000025, #0000001a),url('../public/weather.jpg');
+  width:100%;
+  height:100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.lightwhite{
+  background-color: #ffffff21;
+}
+
+
+@media screen and (max-width:700px) {
+    .mainbody{
+      height:auto !important;
+    }
+}
 
 /* Loading css  */
 
@@ -41,7 +60,7 @@ input:focus{
     width: 7px;
     height: 7px;
     border-radius: 50%;
-    background: black;
+    background: white;
     margin: -4px 0 0 -4px;
   }
   .lds-roller div:nth-child(1) {
