@@ -1,25 +1,25 @@
-import { SunIcon } from '@heroicons/react/24/solid'
+import { CloudIcon, SunIcon } from '@heroicons/react/24/solid'
 import React from 'react'
 
 const WeatherData = ({datas}) => {
+
+
 
     const [WeatherIcon, setWeatherIcon] = React.useState('');
 
 
     React.useEffect(() => {
-        switch(datas?.weather && datas?.weather[0]?.description.toLowerCase()){
-            case 'clear sky':
-        }
-    },[false])
+        setWeatherIcon(datas?.weather ? datas?.weather[0]?.description.toLowerCase() :'sunny')
+    },[true])
   return (
     <div className=''>
-         <div key={datas.id} className="w-[700px] mt-8 md:mt-0 p-1 h-full lightwhite shadow-xl">
-            <div className="topweatherBox flex-col md:flex-row flex justify-center md:justify-between h-auto  md:h-[60%] w-[100%] rounded-md bg-slate-600">
+         <div key={datas.id} className="w-[700px] rounded-lg mt-8 md:mt-0 p-1 h-full lightwhite shadow-xl">
+            <div  className="topweatherBox flex-col md:flex-row flex justify-center md:justify-between h-auto  md:h-[60%] w-[100%] rounded-md ">
               <div className="w-full mb-5 md:mb-0 md:w-[60%] h-full flex items-center justify-center flex-col">
                 <h5  className='text-yellow-400  rounded-full pb-1 font-bold text-[20px] '>{datas?.sys?.country || null},</h5>
                 <h5 className='text-[26px] text-white font-light'>{datas?.name || null}</h5>
                 <h2 className='text-white text-[55px] font-light'>{Math.floor(datas?.main?.temp) || null}°</h2>
-                <h6 className='text-[19px] text-white font-semibold '>{datas?.weather ? datas?.weather[0]?.description : datas.message}</h6>
+                <h6 className='text-[19px] text-white font-semibold '>{datas?.weather ? datas?.weather[0]?.description : 'City not found'}</h6>
                 <div className="text-white space-x-3 mt-2 text-[15px] font-normal">
                   <span className=''><span className='font-semibold'>Min Temp:</span>  {datas?.main?.temp_min || null}</span>
                   <span className=''><span className='font-semibold'>Max Temp:</span> {datas?.main?.temp_max || null}</span>
@@ -27,9 +27,11 @@ const WeatherData = ({datas}) => {
               </div>
               <div className="h-full flex items-center w-full md:w-[40%] relative right-0  justify-center">
                 {
+                  WeatherIcon === 'broken clouds' ?
+                   <CloudIcon className='h-[110px] text-yellow-500'/>:
                     <SunIcon className='h-[110px] text-yellow-500' />
                 }
-              </div>
+              </div>  
             </div>
             <div className=" h-[40%] w-[100%] p-5 rounded-md ">
                   <div className='p-3 flex justify-between flex-col md:flex-row items-center text-center'>

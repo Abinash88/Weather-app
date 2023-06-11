@@ -14,21 +14,21 @@ const WeatherBox = () => {
   const dispatch = useDispatch();
   
   useEffect(() => {
-    dispatch(FetchingApi(city !== "" ? city : "kathmandu"));
+    dispatch(FetchingApi(city !== "" ? city.trim()  : "kathmandu"));
   },[city]);
 
   useEffect(() => {
     if(!data[0]?.weather) {
       dispatch(FetchingApi('kathmandu'))
     }
-  },[dispatch]);
+  },[data]);
  
   if (status === "loading") {
     return <Loading />;
   }
   return (
     <div className="w-full h-auto md:h-[500px] flex justify-center">
-      {data ? data?.map((datas, index) => {
+      {data ? data?.map((datas) => {
         return (
           <>
             <WeatherData
