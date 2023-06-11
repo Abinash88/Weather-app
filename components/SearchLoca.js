@@ -6,7 +6,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { Add } from "@/ReduxCode/CitySilce";
 import { useEffect } from "react";
 import { FetchCity } from "@/ReduxCode/FetchCity";
-import { TypeCities } from "@/ReduxCode/TypeCityName";
 
 const SearchLoca = () => {
   const dispatch = useDispatch();
@@ -16,17 +15,20 @@ const SearchLoca = () => {
   const [GetCities, setGetCities] = React.useState("");
   const GetFocus = React.useRef(null);
 
-  // if (GetFocus.current === document.activeElement) {
-    document.addEventListener("keydown", function (e) {
-      if (e.code === "Enter") {
-        dispatch(Add(GetFocus.current.value));
-        setGetCities("");
-        setHide(false);
-      }
-    });
-  // }
 
-  
+
+    if(typeof document !== 'undefined') {
+      if (GetFocus.current === document.activeElement) {
+        document.addEventListener("keydown", function (e) {
+          if (e.code === "Enter") {
+            dispatch(Add(GetFocus.current.value));
+            setGetCities("");
+            setHide(false);
+          }
+        });
+      }
+      
+    }
 
   useEffect(() => {
     dispatch(FetchCity());
@@ -104,7 +106,7 @@ const SearchLoca = () => {
             })
           ) : (
             <div className="w-full h-full text-gray-600 font-bold flex items-center justify-center ">
-              No Data Found!
+              Hit! Enter if No Data Found!
             </div>
           )}
         </div>
