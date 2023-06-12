@@ -14,7 +14,9 @@ const WeatherBox = () => {
   const dispatch = useDispatch();
   
   useEffect(() => {
+    console.log(city)
     dispatch(FetchingApi(city !== "" ? city.trim()  : "kathmandu"));
+    
   },[city]);
 
   useEffect(() => {

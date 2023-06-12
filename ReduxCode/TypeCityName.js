@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 
 const initialState = {
-    realcity:''
+    realcity:'',
 };
 
 export const TypeCity = createSlice({

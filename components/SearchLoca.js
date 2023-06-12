@@ -15,20 +15,18 @@ const SearchLoca = () => {
   const [GetCities, setGetCities] = React.useState("");
   const GetFocus = React.useRef(null);
 
-
-
-    if(typeof document !== 'undefined') {
-      if (GetFocus.current === document.activeElement) {
-        document.addEventListener("keydown", function (e) {
-          if (e.code === "Enter") {
-            dispatch(Add(GetFocus.current.value));
-            setGetCities("");
-            setHide(false);
-          }
-        });
-      }
-      
+  if (typeof document !== "undefined") {
+    if (GetFocus.current === document.activeElement) {
+      document.addEventListener("keydown", function (e) {
+        if (e.code === "Enter") {
+          dispatch(Add(GetFocus.current.value));
+          setHide(false);
+        }
+      });
     }
+  }
+
+  
 
   useEffect(() => {
     dispatch(FetchCity());
