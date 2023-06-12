@@ -1,7 +1,6 @@
 "use client";
 
 import { FetchingApi } from "@/ReduxCode/FetchWeather";
-// import { CloudIcon, SunIcon } from "@heroicons/react/24/solid";
 import React from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -15,15 +14,11 @@ const WeatherBox = () => {
   
   useEffect(() => {
     console.log(city)
-    dispatch(FetchingApi(city !== "" ? city.trim()  : "kathmandu"));
+    dispatch(FetchingApi(city !== "" ? city.trim()  : "damak"));
     
   },[city]);
 
-  useEffect(() => {
-    if(!data[0]?.weather) {
-      dispatch(FetchingApi('kathmandu'))
-    }
-  },[data]);
+ 
  
   if (status === "loading") {
     return <Loading />;
