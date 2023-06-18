@@ -7,6 +7,7 @@ import {
   FaCloudversify,
   FaCloudSun,
   FaCloudSunRain,
+  AiFillCloud 
 } from "react-icons/fa";
 
 const WeatherData = ({ datas }) => {
@@ -68,7 +69,7 @@ const WeatherData = ({ datas }) => {
             ) : WeatherIcon === "scattered clouds" ? (
               <FaCloudSun className="text-[150px] text-yellow-500" />
             ) : WeatherIcon === "clear sky" ? (
-              <FaCloud className="text-[150px] text-yellow-500" />
+              <AiFillCloud className="text-[150px] text-yellow-500" />
             ) : (
               <FaCloudSunRain className="text-[150px] text-yellow-500" />
             )}

@@ -27,6 +27,10 @@ const SearchLoca = () => {
   }
 
   
+  const ClickButton =  () => {
+    dispatch(Add(GetFocus.current.value));
+          setHide(false);
+  }
 
   useEffect(() => {
     dispatch(FetchCity());
@@ -85,7 +89,7 @@ const SearchLoca = () => {
             value={GetCities}
             required
           />
-          <MagnifyingGlassIcon className="h-7 cursor-pointer" />
+          <MagnifyingGlassIcon onClick={ClickButton} className="h-7 cursor-pointer" />
         </div>
         <div
           className={`w-[90%] md:w-[70%] ${
