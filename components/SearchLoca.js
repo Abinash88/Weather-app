@@ -87,7 +87,7 @@ const SearchLoca = () => {
             className="w-[100%] search bg-transparent h-10 py-2 px-4 "
             placeholder="Search city..."
             value={GetCities}
-            required
+            required 
           />
           <MagnifyingGlassIcon onClick={ClickButton} className="h-7 cursor-pointer" />
         </div>
@@ -108,7 +108,7 @@ const SearchLoca = () => {
             })
           ) : (
             <div className="w-full h-full text-gray-600 font-bold flex items-center justify-center ">
-              Hit! Enter if No Data Found!
+              Hit! Enter or click search icon if No Data Found!
             </div>
           )}
         </div>
