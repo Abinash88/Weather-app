@@ -10,11 +10,7 @@ import Head from "next/head";
 export default function Home() {
   return (
     <>
-      <Head>
-        {typeof window !== 'undefined' &&
-          <script src="https://kit.fontawesome.com/d24d558fc0.js" crossorigin="anonymous"></script>
-        }
-      </Head>
+     
       <main
         style={{ backgroundColor: "#" }}
         className="mainbody flex h-auto md:min-h-screen  w-full flex-col items-center justify-between p-5 bg-gray-100"
