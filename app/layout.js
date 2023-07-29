@@ -13,11 +13,11 @@ const inter = Inter({ subsets: ["latin"] });
 export default function RootLayout({ children }) {
   return (
     <>
-     <Head>
+     {/* <Head>
         {typeof window !== 'undefined' &&
           <script src="https://kit.fontawesome.com/d24d558fc0.js" crossorigin="anonymous"></script>
         }
-      </Head>
+      </Head> */}
       <Provider store={Store}>
           <html lang="en">
             <body className={`${inter.className} `}>

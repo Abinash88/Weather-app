@@ -5,7 +5,6 @@ import SearchLoca from "../components/SearchLoca";
 import WeatherBox from "../components/WeatherBox";
 import Loading from "@/components/Loading";
 import { Toaster } from "react-hot-toast";
-import Head from "next/head";
 
 export default function Home() {
   return (
