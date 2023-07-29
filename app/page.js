@@ -11,7 +11,9 @@ export default function Home() {
   return (
     <>
       <Head>
-      <script src="https://kit.fontawesome.com/d24d558fc0.js" crossorigin="anonymous"></script>
+        {typeof window !== 'undefined' &&
+          <script src="https://kit.fontawesome.com/d24d558fc0.js" crossorigin="anonymous"></script>
+        }
       </Head>
       <main
         style={{ backgroundColor: "#" }}
